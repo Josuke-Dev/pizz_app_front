@@ -10,7 +10,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { ellipse, homeOutline, locationOutline, personCircleOutline, square, triangle } from 'ionicons/icons';
 import Home from './pages/Home';
 import DeliveryAddress from './pages/DeliveryAddress';
 import MyAccount from './pages/MyAccount';
@@ -56,15 +56,15 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">
-            <IonIcon icon={triangle} />
+            <IonIcon icon={homeOutline} />
             <IonLabel>Accueil</IonLabel>
           </IonTabButton>
           <IonTabButton tab="deliveryaddress" href="/deliveryaddress">
-            <IonIcon icon={ellipse} />
+            <IonIcon icon={locationOutline} />
             <IonLabel>Choisir mon adresse de livraison</IonLabel>
           </IonTabButton>
           <IonTabButton tab="myaccount" href="/myaccount">
-            <IonIcon icon={square} />
+            <IonIcon icon={personCircleOutline} />
             <IonLabel>Mon Compte</IonLabel>
           </IonTabButton>
         </IonTabBar>
