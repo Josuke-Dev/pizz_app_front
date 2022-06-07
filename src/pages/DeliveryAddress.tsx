@@ -1,25 +1,27 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.css';
+import Profile from '../components/Profile';
 
-const Tab2: React.FC = () => {
+const DeliveryAddress: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
+          <IonTitle>Pizz'App</IonTitle>
+          <Profile></Profile>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 2</IonTitle>
+            <IonTitle>Pizz'App</IonTitle>
+            <Profile></Profile>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+        <ExploreContainer name="Choisir mon adresse de livraison" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab2;
+export default DeliveryAddress;
