@@ -1,13 +1,30 @@
-.login-btn , .logout-btn {
+.login-btn {
+    padding: 20px 35px;
+    border-radius: 40px;
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.logout-btn {
     padding: 10px 25px;
     border-radius: 40px;
     color: white;
-    background-color: #56a8dd;
+    background-color: green;
     font-weight: bold;
     cursor: pointer;
     font-size: 16px;
 }
 
-.login-btn:hover , .logout-btn:hover {
-    background-color: #ca4a95;
+.login-btn:hover {
+    color: white;
+    background-color: red;
 }
+
+.logout-btn:hover {
+    color: white;
+    background-color: red;
+}
+

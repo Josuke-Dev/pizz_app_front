@@ -10,10 +10,11 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, homeOutline, locationOutline, personCircleOutline, square, triangle } from 'ionicons/icons';
+import { homeOutline, personCircleOutline } from 'ionicons/icons';
 import Home from './pages/Home';
-import DeliveryAddress from './pages/DeliveryAddress';
 import MyAccount from './pages/MyAccount';
+import MyInfos from './pages/MyInfos';
+import MyOrders from './pages/MyOrders';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -44,24 +45,23 @@ const App: React.FC = () => (
           <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/deliveryaddress">
-            <DeliveryAddress />
-          </Route>
           <Route path="/myaccount">
             <MyAccount />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
+          <Route exact path="/myinfos">
+            <MyInfos />
+          </Route>
+          <Route exact path="/myorders">
+            <MyOrders />
+          </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">
             <IonIcon icon={homeOutline} />
             <IonLabel>Accueil</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="deliveryaddress" href="/deliveryaddress">
-            <IonIcon icon={locationOutline} />
-            <IonLabel>Choisir mon adresse de livraison</IonLabel>
           </IonTabButton>
           <IonTabButton tab="myaccount" href="/myaccount">
             <IonIcon icon={personCircleOutline} />

@@ -4,7 +4,7 @@ import Profile from '../components/Profile';
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from '../components/LogoutButton';
 
-const Home: React.FC = () => {
+const MyInfos: React.FC = () => {
 
   const { user, isAuthenticated, isLoading } = useAuth0();
 
@@ -33,10 +33,10 @@ const Home: React.FC = () => {
           )}
           </IonToolbar>
         </IonHeader>
-        <PageContainer name="Page d'accueil" />
+        <PageContainer name="Mes Infos" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Home;
+export default MyInfos;
