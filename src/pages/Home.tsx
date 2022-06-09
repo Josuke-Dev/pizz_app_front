@@ -1,38 +1,15 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import PageContainer from '../components/PageContainer';
-import Profile from '../components/Profile';
-import { useAuth0 } from "@auth0/auth0-react";
-import LogoutButton from '../components/LogoutButton';
+import PizzHeader from '../components/PizzHeader';
+import PizzHeaderMaxScreen from '../components/PizzHeaderMaxScreen';
 
 const Home: React.FC = () => {
 
-  const { user, isAuthenticated, isLoading } = useAuth0();
-
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Pizz'App</IonTitle>
-          { isAuthenticated && (
-            <div className='profile-box'>
-              <Profile></Profile>
-              <LogoutButton></LogoutButton>
-            </div>
-          )}
-        </IonToolbar>
-      </IonHeader>
+      <PizzHeader></PizzHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle>Pizz'App</IonTitle>
-            { isAuthenticated && (
-            <div className='profile-box'>
-              <Profile></Profile>
-              <LogoutButton></LogoutButton>
-            </div>
-          )}
-          </IonToolbar>
-        </IonHeader>
+        <PizzHeaderMaxScreen></PizzHeaderMaxScreen>
         <PageContainer name="Page d'accueil" />
       </IonContent>
     </IonPage>

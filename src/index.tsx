@@ -3,16 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
-  <Auth0Provider
-    domain="dev-ezkrvvsz.us.auth0.com"
-    clientId="cuHhwPqoccDl39vQEngVBTg1K3PHicaw"
-    redirectUri={window.location.origin}
-  >
-    <App />
-  </Auth0Provider>,
+    <App />,
   document.getElementById('root')
 );
 

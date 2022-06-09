@@ -1,15 +1,9 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 
 const Profile: React.FC | any = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-
-  if (isLoading) {
-    return <div>Loading ...</div>;
-  }
 
   return (
-    isAuthenticated && (
+    /* isAuthenticated && (
       <div>
         { (user != undefined) ?
         <div className="profile-block">
@@ -20,6 +14,10 @@ const Profile: React.FC | any = () => {
         : null }
       </div>
     )
+    */
+   <div>
+     Salut !
+   </div>
   );
 };
 

@@ -1,12 +1,10 @@
 import './PageContainer.css';
-import { useAuth0 } from "@auth0/auth0-react";
 import React from 'react';
 import { IonList, IonItem, IonLabel, IonInput, IonToggle, IonRadio, IonCheckbox, IonItemSliding, IonItemOption, IonItemOptions, IonContent } from '@ionic/react';
+import LoginButton from './LoginButton';
 
 
 const PizzeriaList: React.FC = () => {
-
-  const { user, isAuthenticated, isLoading } = useAuth0();
 
   return (
     <div className='liste-pizzerias'>
@@ -41,6 +39,7 @@ const PizzeriaList: React.FC = () => {
       <IonItem>
         <IonLabel>Pizzeria 4</IonLabel>
       </IonItem>
+      <LoginButton></LoginButton>
     </IonList>
     </div>
   );

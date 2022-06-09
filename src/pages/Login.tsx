@@ -3,17 +3,17 @@ import PageContainer from '../components/PageContainer';
 import PizzHeader from '../components/PizzHeader';
 import PizzHeaderMaxScreen from '../components/PizzHeaderMaxScreen';
 
-const MyInfos: React.FC = () => {
+const Login: React.FC = () => {
 
   return (
     <IonPage>
       <PizzHeader></PizzHeader>
       <IonContent fullscreen>
         <PizzHeaderMaxScreen></PizzHeaderMaxScreen>
-        <PageContainer name="Mes Infos" />
+        <PageContainer name="Login Page" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default MyInfos;
+export default Login;

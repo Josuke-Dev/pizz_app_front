@@ -15,6 +15,7 @@ import Home from './pages/Home';
 import MyAccount from './pages/MyAccount';
 import MyInfos from './pages/MyInfos';
 import MyOrders from './pages/MyOrders';
+import Login from './pages/Login';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -56,6 +57,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/myorders">
             <MyOrders />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
