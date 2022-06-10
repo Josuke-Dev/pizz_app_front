@@ -1,8 +1,11 @@
 import './PageContainer.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { connect, useDispatch } from "react-redux";
+import { login } from "../actions/auth";
+import { Redirect } from 'react-router-dom';
 
 
 interface IFormInputs {
@@ -23,20 +26,29 @@ const LoginForm: React.FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
         resolver: yupResolver(schema)
       });
-      const onSubmit = (data: IFormInputs) => console.log(data);
-    
+
+    const [connexion , setConnexion] = React.useState({
+      username : '',
+      password : '',
+      loading: false,
+    })
+
+    const onSubmit = (data: IFormInputs) => console.log(data);
+  
       return (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input {...register("email")} placeholder="Email" type="email" required />
+          <input {...register("email")} placeholder="Email" type="email" required onChange={(e) => setConnexion({...connexion, username : e.target.value}) } />
           <p>{errors.email?.message}</p>
             
-          <input {...register("password")} placeholder="Mot de passe" type="password" required />
+          <input {...register("password")} placeholder="Mot de passe" type="password" required onChange={(e) => setConnexion({...connexion, password : e.target.value}) } />
           <p>{errors.password?.message}</p>
           
-          <input type="submit" />
+          <input type="submit" value="Connexion" />
         </form>
       );
 
 };
+
+
 
 export default LoginForm;
