@@ -1,12 +1,19 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/auth/";
+const API_URL = "http://localhost:8000/api/";
+const config = {
+  headers: {
+    'Content-Type':'application/json',
+    'Accept':'application/json',
+    "Access-Control-Allow-Origin": "*",
+  },
+};
 
 class AuthService {
 
   login(username, password) {
     return axios
-      .post(API_URL + "signin", { username, password })
+      .post(API_URL + "login_check", { username, password }, config)
       .then((response) => {
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
@@ -20,7 +27,7 @@ class AuthService {
   }
 
   register(username, password) {
-    return axios.post(API_URL + "signup", {
+    return axios.post(API_URL + "login_check", {
       username,
       password,
     });
