@@ -2,7 +2,7 @@ import './PageContainer.css';
 import React from 'react';
 import { IonList, IonItem, IonLabel, IonInput, IonToggle, IonRadio, IonCheckbox, IonItemSliding, IonItemOption, IonItemOptions, IonContent } from '@ionic/react';
 import LoginButton from './LoginButton';
-
+import UserService from '../services/user.service';
 
 const PizzeriaList: React.FC = () => {
 
@@ -39,6 +39,9 @@ const PizzeriaList: React.FC = () => {
       <IonItem>
         <IonLabel>Pizzeria 4</IonLabel>
       </IonItem>
+      <div style={{display:"flex", justifyContent: "center", margin: "20px"}}>
+        <button className="login-btn" onClick={() => UserService.getOrders() }>Get orders</button>
+      </div>
       <LoginButton></LoginButton>
     </IonList>
     </div>
