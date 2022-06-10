@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { connect, useDispatch } from "react-redux";
 import { login } from "../actions/auth";
 import { Redirect } from 'react-router-dom';
+import store from '../store';
 
 
 interface IFormInputs {
@@ -30,13 +31,20 @@ const LoginForm: React.FC = () => {
     const [connexion , setConnexion] = React.useState({
       username : '',
       password : '',
-      loading: false,
     })
 
-    const onSubmit = (data: IFormInputs) => console.log(data);
+    /*const onSubmit = (data: IFormInputs) => console.log(data);*/
+    const onSubmit = (data: IFormInputs) => store.dispatch(login(data))
+    .then(() => {
+      console.log(data);
+      console.log(login(data));
+      /* window.location.href = "/profil"; */
+    })
+
+    /* If { isLoggedIn } => window.location.href= "/profil"; */
   
       return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
           <input {...register("email")} placeholder="Email" type="email" required onChange={(e) => setConnexion({...connexion, username : e.target.value}) } />
           <p>{errors.email?.message}</p>
             
