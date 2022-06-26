@@ -41,6 +41,7 @@ const PizzeriaList: React.FC = () => {
       </IonItem>
       <div style={{display:"flex", justifyContent: "center", margin: "20px"}}>
         <button className="login-btn" onClick={() => UserService.getOrders() }>Get orders</button>
+        <button className="login-btn" onClick={() => UserService.getPokemon() }>Get pokemon</button>
       </div>
       <LoginButton></LoginButton>
     </IonList>
